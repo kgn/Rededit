@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Rededit Global</title>
+		<script type="text/javascript">
+			
+			//Base reddit url
+			var redditUrl = 'http://www.reddit.com';
+			
+			//Sub-reddit url
+			var subRedditUrl = redditUrl+'/r/';
+			
+			//Sub-reddit url
+			var userRedditUrl = redditUrl+'/user/';
+			
+			//Used to query information about a url
+			var urlQueryUrl = redditUrl+'/api/info.json?url=';
+			
+			//Vote url
+			var voteUrl = redditUrl+'/api/vote';
+			
+			//submit link
+			var submitUrl = redditUrl+'/submit?url='
+			
+			function isInBlackList(url){
+			    var blacklist = safari.extension.settings.blacklist;
+			    if(typeof(blacklist) === 'undefined'){
+			        return false;
+			    }
+			    
+				var lowerUrl = url.toLowerCase();
+				var blacklistUrls = safari.extension.settings.blacklist.replace(' ', ',').split(',');
+				for(i = 0; i < blacklistUrls.length; ++i){
+				    var blacklistUrl = blacklistUrls[i];
+					if(blacklistUrl == ''){
+						continue;
+					}
+					
+					if(lowerUrl.indexOf(blacklistUrl.toLowerCase()) > 0){
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			//TODO: add a timer to updat the extension bars,
+			//because the bars currently only load when a webpage is loaded
+			
+		</script>
+	</head>
+	<body></body>
+</html>

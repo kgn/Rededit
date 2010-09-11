@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Reddedit Bar</title>
+		<link rel="stylesheet" href="CSS/Bar.css" />
+		<script type="text/javascript" src="Scripts/jQuery.js"></script>
+		<script type="text/javascript" src="Scripts/Bar.js"></script>
+		<script type="text/javascript">
+			
+			function respondToMessage(messageEvent){
+				if(messageEvent.name === 'urlChanged'){
+					updateBar();
+				}
+			}
+			
+			$(document).ready(function(){
+				$('#icon').attr('href', globalData.redditUrl);
+				updateBar();
+			});
+			
+			safari.self.browserWindow.addEventListener('message', respondToMessage, false);
+			
+		</script>
+	</head>
+	<body>
+	
+		<a id="icon" title="reddit.com"></a>
+		
+		<div id="stats">
+			<a id="up" href="javascript:voteUp()"></a>
+			<span id="score"></span>
+			<a id="down" href="javascript:voteDown()"></a>
+		</div>
+		
+		<a id="submit">Submit</a>
+		
+		<a id="story"></a>
+		<div id="storyinfo">
+			Submitted to <a id="subreddit"></a> by <a id="author"/></a> on <span id="created"/></span> <span id="nsfw">NSFW</span>
+		</div>
+		
+		<div id="comments" class="comments1"></div>
+		<img id="blacklist" src="Images/Blacklist.png" title="Blacklist" />
+	</body>
+</html>
