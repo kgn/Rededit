@@ -83,7 +83,6 @@ a{
 	position: absolute;
 	left: 200px;
 	right: 200px;
-	display: none;
 }
 
 #story{
@@ -94,7 +93,6 @@ a{
 }
 
 #nsfw{
-	display: none;
 	font-weight: bold;
 	border: 1px solid #fe4a41;
 	border-radius: 3px;
@@ -117,7 +115,6 @@ a{
 	height: 24px;
 	padding-top: 6px;
 	padding-left: 4px;
-	display: none;
 }
 
 .comments1{
@@ -150,4 +147,8 @@ a{
 	top: 3px;
 	right: 3px;
 	display: none;
+}
+
+#submitted{
+    display: none;
 }
