@@ -13,7 +13,7 @@ function getElementsByClassName(node, classname){
 //TODO: respect the commentImages setting
 //if(safari.self.extension.settings.commentImages){
     var commentarea = getElementsByClassName(document, 'commentarea');
-    if(commentarea){
+    if(commentarea && commentarea.length > 0){
         var links = commentarea[0].getElementsByTagName('a');
         for(i=0; i<links.length; ++i){
             //figure out the image url
