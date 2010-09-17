@@ -2,9 +2,11 @@
 safari.self.tab.dispatchMessage('urlChanged', false);
 
 //ask the global page what to inject based on the settings
+var commentImagesRun = false;
 function handleMessage(event){
-    if(event.name == 'commentImages'){
+    if(event.name == 'commentImages' && !commentImagesRun){
         commentImages();
+        commentImagesRun = true;
     }
 }
 safari.self.addEventListener('message', handleMessage, false);
