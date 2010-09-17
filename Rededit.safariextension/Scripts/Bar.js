@@ -114,7 +114,22 @@ function _Bar(){
             return;
         }
         
+        //TODO: add support for displaying all the instances of this story on reddit
+        //probbaly with previous and next buttons
+        
         var data = json.data.children[0].data;
+        
+        //display the story with the highest score
+        if(json.data.children.length > 1){
+            var highScore = data.score;
+            for(i=1; i<json.data.children.length; ++i){
+                var childData = json.data.children[i].data;
+                if(childData.score > highScore){
+                    highScore = childData.score;
+                    data = childData;
+                }
+            }
+        }
         
         //score
 		this.score.innerHTML = data.score;
