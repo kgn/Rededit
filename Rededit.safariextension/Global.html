@@ -3,10 +3,19 @@
 	<head>
 		<title>Rededit Global</title>
 		<script type="text/javascript">
+            function messageHandler(event){
+                if(event.name === "injectWithSettings"){
+                    activeTab = event.target.browserWindow.activeTab;
+                    if(safari.extension.settings.commentImages){               
+                        activeTab.page.dispatchMessage("commentImages");
+                    }
+                }
+            }
+            
+            safari.application.addEventListener("message", messageHandler, false);
+          
             //TODO: add a timer to updat the extension bars,
             //because the bars currently only load when a webpage is loaded
         </script>
 	</head>
-	<body>
-	</body>
 </html>

@@ -1,4 +1,14 @@
+//notify the extension bar that the url has changed
 safari.self.tab.dispatchMessage('urlChanged', false);
+
+//ask the global page what to inject based on the settings
+function handleMessage(event){
+    if(event.name == 'commentImages'){
+        commentImages();
+    }
+}
+safari.self.addEventListener('message', handleMessage, false);
+safari.self.tab.dispatchMessage('injectWithSettings');
 
 //FROM: http://www.snook.ca/archives/javascript/your_favourite_1
 function getElementsByClassName(node, classname){
@@ -10,8 +20,7 @@ function getElementsByClassName(node, classname){
     return a;
 }
 
-//TODO: respect the commentImages setting
-//if(safari.self.extension.settings.commentImages){
+function commentImages(){
     var commentarea = getElementsByClassName(document, 'commentarea');
     if(commentarea && commentarea.length > 0){
         var links = commentarea[0].getElementsByTagName('a');
@@ -49,4 +58,4 @@ function getElementsByClassName(node, classname){
             }
         }
     }
-//}
+}
