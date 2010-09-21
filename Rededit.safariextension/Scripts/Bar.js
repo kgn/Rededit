@@ -22,16 +22,9 @@ safari.self.browserWindow.addEventListener('message', respondToMessage, false);
 
 
 String.prototype.unescapeHtml = function(){
-//TODO: implement this
-//    var unescapeDiv = documentument.getElementById('unescape');
-//    
-//    if(typeof(unescapeDiv) === 'undefined'){
-//        return this;
-//    }
-//    
-//    unescapeDiv.innerHTML = this;
-//    return unescapeDiv.childNodes[0].nodeValue;
-    return this;
+    var unescapeDiv = document.getElementById('unescape');
+    unescapeDiv.innerHTML = this;
+    return unescapeDiv.childNodes[0].nodeValue;
 }
 
 function isBlacklisted(url){
