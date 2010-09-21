@@ -16,13 +16,15 @@ function handleMessage(event){
 safari.self.addEventListener('message', handleMessage, false);
 safari.self.tab.dispatchMessage('injectWithSettings');
 
-//FROM: http://www.snook.ca/archives/javascript/your_favourite_1
 function getElementsByClassName(node, classname){
     var a = [];
-    var re = new RegExp('\\b' + classname + '\\b');
-    var els = node.getElementsByTagName("*");
-    for(var i=0,j=els.length; i<j; i++)
-        if(re.test(els[i].className))a.push(els[i]);
+    var re = new RegExp(' ' + classname + ' ');
+    var els = node.getElementsByTagName('*');
+    for(var i=0,j=els.length; i<j; i++){
+        if(re.test(' '+els[i].className+' ')){
+            a.push(els[i]);
+        }
+    }
     return a;
 }
 
@@ -51,12 +53,25 @@ function imageExpando(){
             var links = entries[e].getElementsByTagName('a');
             var imgUrl = imageUrlFromLink(links[0]);
             if(imgUrl){
+                //create button
+                var div = document.createElement('div');
+                div.className = 'expando-button collapsed selftext';
+                div.setAttribute('onclick', 'expando_child(this)');
+                var tagline = getElementsByClassName(entries[e], 'tagline');
+                tagline[0].insertBefore(div);
+                
+                //create image
                 var img = document.createElement('img');
                 img.src = imgUrl;
                 img.style.display = 'block';
                 img.style.maxWidth = '600px';
                 img.style.maxHeight = '600px';
-                entries[e].appendChild(img);
+                var expando = getElementsByClassName(entries[e], 'expando');
+                expando[0].appendChild(img);
+                
+                //remove loading span
+                var spans = expando[0].getElementsByTagName('span');
+                expando[0].removeChild(spans[0]);
             }
         }
     }
