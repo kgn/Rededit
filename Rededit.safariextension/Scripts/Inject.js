@@ -27,29 +27,7 @@ function commentImages(){
     if(commentarea && commentarea.length > 0){
         var links = commentarea[0].getElementsByTagName('a');
         for(i=0; i<links.length; ++i){
-            //figure out the image url
-            var imgUrl = null;
-            if(links[i].href.match(/\.(jpg|jpeg|gif|png)$/i)){
-                imgUrl = links[i].href;
-            }else if(links[i].href.indexOf('imgur.com') >= 0){
-                var imgurId = links[i].href.match(/[^\/]+$/);
-                if(imgurId){
-                    imgUrl = 'http://i.imgur.com/'+imgurId+'.jpg';
-                }
-            }
-            
-            //check to see if there is already an image in this link with the same src
-            if(imgUrl){
-                for(ii=0; ii<links[i].childNodes.length; ++ii){
-                    var child = links[i].childNodes[ii];
-                    if(child.nodeName == 'IMG' && child.src.toLowerCase() == imgUrl.toLowerCase()){
-                        imgUrl = null;
-                        break;
-                    }
-                }
-            }
-            
-            //display the image
+            var imgUrl = imageUrlFromLink(links[i]);
             if(imgUrl){
                 var img = document.createElement('img');
                 img.src = imgUrl;
@@ -60,4 +38,36 @@ function commentImages(){
             }
         }
     }
+}
+
+function imageUrlFromLink(linkElement){
+    var imgUrl = null;
+    if(linkElement.href.match(/\.(jpg|jpeg|gif|png)$/i)){
+        imgUrl = linkElement.href;
+    }else if(linkElement.href.indexOf('imgur.com') >= 0){
+        var imgurId = linkElement.href.match(/[^\/]+$/);
+        if(imgurId){
+            imgurId = imgurId[0];
+            if(imgurId.indexOf('?') >= 0){
+                var imgurIdSplit = imgurId.split('?');
+                imgurId = imgurIdSplit[0];
+            }else if(imgurId.indexOf('&') >= 0){
+                var imgurIdSplit = imgurId.split('&');
+                imgurId = imgurIdSplit[imgurIdSplit.length-1];
+            }
+            imgUrl = 'http://i.imgur.com/'+imgurId+'.jpg';
+        }
+    }else{
+        return null;
+    }
+    
+    //check to see if there is already an image in this link with the same src
+    for(ii=0; ii<linkElement.childNodes.length; ++ii){
+        var child = linkElement.childNodes[ii];
+        if(child.nodeName == 'IMG' && child.src.toLowerCase() == imgUrl.toLowerCase()){
+            return null;
+        }
+    }
+    
+    return imgUrl;
 }
