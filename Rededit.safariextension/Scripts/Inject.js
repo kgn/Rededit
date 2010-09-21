@@ -3,10 +3,14 @@ safari.self.tab.dispatchMessage('urlChanged', false);
 
 //ask the global page what to inject based on the settings
 var commentImagesRun = false;
+var imageExpandoRun = false;
 function handleMessage(event){
     if(event.name == 'commentImages' && !commentImagesRun){
         commentImages();
         commentImagesRun = true;
+    }else if(event.name == 'imageExpando' && !imageExpandoRun){
+        imageExpando();
+        imageExpandoRun = true;
     }
 }
 safari.self.addEventListener('message', handleMessage, false);
@@ -37,6 +41,34 @@ function commentImages(){
                 links[i].appendChild(img);
             }
         }
+    }
+}
+
+function imageExpando(){
+    function buildExpando(root){
+        var entries = getElementsByClassName(root, 'entry');
+        for(e=0; e<entries.length; ++e){
+            var links = entries[e].getElementsByTagName('a');
+            var imgUrl = imageUrlFromLink(links[0]);
+            if(imgUrl){
+                var img = document.createElement('img');
+                img.src = imgUrl;
+                img.style.display = 'block';
+                img.style.maxWidth = '600px';
+                img.style.maxHeight = '600px';
+                entries[e].appendChild(img);
+            }
+        }
+    }
+    
+    var siteTable = document.getElementById('siteTable');
+    if(siteTable){
+        buildExpando(siteTable);
+    }
+    
+    var siteTableOrganic = document.getElementById('siteTable_organic');
+    if(siteTableOrganic){
+        buildExpando(siteTableOrganic);
     }
 }
 
