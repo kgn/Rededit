@@ -47,8 +47,14 @@ function commentImages(){
 }
 
 function imageExpando(){
-    function buildExpando(root){
-        var entries = getElementsByClassName(root, 'entry');
+    var content = getElementsByClassName(document, 'content');
+    for(c=0; c<content.length; ++c){
+        //skip sidebar
+        if(content[c].parentNode.className.indexOf('sidecontentbox') >= 0){
+            continue;
+        }
+        
+        var entries = getElementsByClassName(content[c], 'entry');
         for(e=0; e<entries.length; ++e){
             var links = entries[e].getElementsByTagName('a');
             var imgUrl = imageUrlFromLink(links[0]);
@@ -74,16 +80,6 @@ function imageExpando(){
                 expando[0].removeChild(spans[0]);
             }
         }
-    }
-    
-    var siteTable = document.getElementById('siteTable');
-    if(siteTable){
-        buildExpando(siteTable);
-    }
-    
-    var siteTableOrganic = document.getElementById('siteTable_organic');
-    if(siteTableOrganic){
-        buildExpando(siteTableOrganic);
     }
 }
 
