@@ -1,4 +1,4 @@
-const rededit_expando_child = "function next(elem){do{elem=elem.nextSibling;}while(elem && elem.className.indexOf('expando'));return elem;} function rededit_expando_child(node){var expando = next(node); if(expando.style.display == 'none'){expando.style.display = 'inline'; node.className = 'rededit-image-expando expanded'}else{expando.style.display = 'none'; node.className = 'rededit-image-expando collapsed'}}";
+const rededit_expando_child = "function next(elem){do{elem=elem.nextSibling;}while(elem && elem.className.indexOf('expando'));return elem;} function rededit_expando_child(node){var expando = next(node); if(expando.style.display == 'none'){expando.style.display = ''; node.className = 'rededit-image-expando expanded'}else{expando.style.display = 'none'; node.className = 'rededit-image-expando collapsed'}}";
 
 //notify the extension bar that the url has changed
 safari.self.tab.dispatchMessage('urlChanged', false);
