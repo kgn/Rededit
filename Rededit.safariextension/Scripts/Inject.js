@@ -78,6 +78,8 @@ function imageExpando(){
                 //create button
                 var div = document.createElement('div');
                 div.className = 'rededit-image-expando collapsed';
+                //we have to add this as a style because the reddit css is overriding this
+                div.style.margin = '2px 5px 2px 0';
                 div.setAttribute('onclick', "rededit_expando_child(this)");
                 var title = getElementsByClassName(entries[e], 'title');
                 insertAfter(title[0], div);

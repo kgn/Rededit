@@ -2,6 +2,7 @@
     float:left;
     height:23px;
     width:23px;
+    //this wont be applied and is applied by a style in the injection script
     margin:2px 5px 2px 0;
 }
 
