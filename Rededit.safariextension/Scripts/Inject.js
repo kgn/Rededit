@@ -16,6 +16,11 @@ function handleMessage(event){
 safari.self.addEventListener('message', handleMessage, false);
 safari.self.tab.dispatchMessage('injectWithSettings');
 
+//FROM: http://www.netlobo.com/javascript-insertafter.html
+function insertAfter(referenceNode, newNode){
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 function getElementsByClassName(node, classname){
     var a = [];
     var re = new RegExp(' ' + classname + ' ');
@@ -61,10 +66,10 @@ function imageExpando(){
             if(imgUrl){
                 //create button
                 var div = document.createElement('div');
-                div.className = 'expando-button collapsed selftext';
-                div.setAttribute('onclick', 'expando_child(this)');
-                var tagline = getElementsByClassName(entries[e], 'tagline');
-                tagline[0].insertBefore(div);
+                div.className = 'rededit-image-expando collapsed';
+                div.setAttribute('onclick', "function next(elem){do{elem=elem.nextSibling;}while(elem && elem.className.indexOf('expando'));return elem;} var expando = next(this); if(expando.style.display == 'none'){expando.style.display = 'inline'; this.className = 'rededit-image-expando expanded'}else{expando.style.display = 'none'; this.className = 'rededit-image-expando collapsed'}");
+                var title = getElementsByClassName(entries[e], 'title');
+                insertAfter(title[0], div);
                 
                 //create image
                 var img = document.createElement('img');

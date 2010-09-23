@@ -37,6 +37,10 @@
 				<string>Scripts/Inject.js</string>
 			</array>
 		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>CSS/ImageExpando.css</string>
+		</array>
 	</dict>
 	<key>Description</key>
 	<string>Adds features to the reddit website, and a bar which provides reddit information about the active webpage.</string>
