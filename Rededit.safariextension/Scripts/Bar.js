@@ -34,17 +34,17 @@ function isBlacklisted(url){
     }
     
 	var lowerUrl = url.toLowerCase();
-	var blacklistUrls = safari.extension.settings.blacklist.replace(' ', ',').split(',');
-	for(i = 0; i < blacklistUrls.length; ++i){
-	    var blacklistUrl = blacklistUrls[i];
-		if(blacklistUrl == ''){
+	var blacklistUrls = safari.extension.settings.blacklist.replace(',', ' ').split(' ');
+	for(i=0; i<blacklistUrls.length; ++i){
+		if(blacklistUrls[i] == ''){
 			continue;
 		}
 		
-		if(lowerUrl.indexOf(blacklistUrl.toLowerCase()) >= 0){
+		if(lowerUrl.indexOf(blacklistUrls[i].toLowerCase()) >= 0){
 			return true;
 		}
 	}
+	
 	return false;
 }
 
@@ -186,6 +186,3 @@ function _Bar(){
 		this.submitted.style.display = 'inline-block';
     }
 };
-
-//TODO: add a timer to updat the extension bars,
-//because the bars currently only load when a webpage is loaded
