@@ -1,5 +1,7 @@
 Rededit is a Safari Extension that adds features to the reddit.com website, and an extension bar which provides reddit information about the active webpage.
 
+Rededit is distributed under the MIT license, see the LICENSE file for more information.
+
 **Features**
 
 * Extension bar - This is a tool bar that gives you information from reddit.com about the current website you're on.
