@@ -1,0 +1,23 @@
+.rededit-image-expando{
+    float:left;
+    height:23px;
+    width:23px;
+    margin:2px 5px 2px 0;
+}
+
+.rededit-image-expando.collapsed {
+	background: url(../Images/ImageExpando.png) -4px -4px;
+}
+
+.rededit-image-expando.collapsed:hover, .eb-sch {
+	background: url(../Images/ImageExpando.png) -4px -35px;
+}
+
+.rededit-image-expando.expanded, .eb-se {
+    margin-bottom:5px;
+	background: url(../Images/ImageExpando.png) -4px -66px;
+}
+
+.rededit-image-expando.expanded:hover, .eb-seh {
+	background: url(../Images/ImageExpando.png) -4px -97px;
+}
