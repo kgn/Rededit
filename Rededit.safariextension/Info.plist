@@ -7,7 +7,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Rededit</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.InScopeApps.reddedit</string>
+	<string>com.InScopeApps.rededit</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -51,6 +51,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>http://inscopeapps.com</string>
+	<string>http://github.com/InScopeApps/Rededit</string>
 </dict>
 </plist>
