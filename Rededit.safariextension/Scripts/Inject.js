@@ -1,3 +1,5 @@
+const rededit_expando_child = "function next(elem){do{elem=elem.nextSibling;}while(elem && elem.className.indexOf('expando'));return elem;} function rededit_expando_child(node){var expando = next(node); if(expando.style.display == 'none'){expando.style.display = 'inline'; node.className = 'rededit-image-expando expanded'}else{expando.style.display = 'none'; node.className = 'rededit-image-expando collapsed'}}";
+
 //notify the extension bar that the url has changed
 safari.self.tab.dispatchMessage('urlChanged', false);
 
@@ -52,6 +54,15 @@ function commentImages(){
 }
 
 function imageExpando(){
+    //add the rededit_expando_child script to the document 
+    //so it's avalible for the image expando button
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.innerHTML = rededit_expando_child;
+    head.appendChild(script);
+    
+    //find all entries in the correct content div
     var content = getElementsByClassName(document, 'content');
     for(c=0; c<content.length; ++c){
         //skip sidebar
@@ -67,7 +78,7 @@ function imageExpando(){
                 //create button
                 var div = document.createElement('div');
                 div.className = 'rededit-image-expando collapsed';
-                div.setAttribute('onclick', "function next(elem){do{elem=elem.nextSibling;}while(elem && elem.className.indexOf('expando'));return elem;} var expando = next(this); if(expando.style.display == 'none'){expando.style.display = 'inline'; this.className = 'rededit-image-expando expanded'}else{expando.style.display = 'none'; this.className = 'rededit-image-expando collapsed'}");
+                div.setAttribute('onclick', "rededit_expando_child(this)");
                 var title = getElementsByClassName(entries[e], 'title');
                 insertAfter(title[0], div);
                 
