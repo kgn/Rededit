@@ -6,13 +6,14 @@
             function messageHandler(event){
                 if(event.name === 'injectWithSettings'){
                     activeTab = event.target.browserWindow.activeTab;
-                    
-                    if(safari.extension.settings.commentImages){               
-                        activeTab.page.dispatchMessage('commentImages');
-                    }
-                    
-                    if(safari.extension.settings.imageExpando){               
-                        activeTab.page.dispatchMessage('imageExpando');
+                    if(activeTab.url.indexOf('reddit.com') >= 0){
+                        if(safari.extension.settings.commentImages){               
+                            activeTab.page.dispatchMessage('commentImages');
+                        }
+                        
+                        if(safari.extension.settings.imageExpando){               
+                            activeTab.page.dispatchMessage('imageExpando');
+                        }
                     }
                 }
             }
