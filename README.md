@@ -21,7 +21,7 @@ This modifies the Reddit website by adding expando buttons for images. Reddit al
 
 ![ImageExpando](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ImageExpando.png)
 
-**Images in comments**
+**Images in Comments**
 
 This modifies the Reddit website by finding links to images in comments and displaying the image inline under the link. 
 
