@@ -84,14 +84,20 @@ function imageExpando(){
                 var title = getElementsByClassName(entries[e], 'title');
                 insertAfter(title[0], div);
                 
+                //create link
+                var imgLink = document.createElement('a');
+                imgLink.href = links[0];
+                imgLink.style.display = 'block';
+                
                 //create image
                 var img = document.createElement('img');
                 img.src = imgUrl;
-                img.style.display = 'block';
                 img.style.maxWidth = '600px';
                 img.style.maxHeight = '600px';
+                
                 var expando = getElementsByClassName(entries[e], 'expando');
-                expando[0].appendChild(img);
+                imgLink.appendChild(img);
+                expando[0].appendChild(imgLink);
                 
                 //remove loading span
                 var spans = expando[0].getElementsByTagName('span');
