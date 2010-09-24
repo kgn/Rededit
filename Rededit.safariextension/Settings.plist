@@ -3,14 +3,26 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>Title</key>
+		<string>Extension Bar</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
 		<key>DefaultValue</key>
 		<string>reddit.com</string>
 		<key>Key</key>
 		<string>blacklist</string>
 		<key>Title</key>
-		<string>Bar Blacklist</string>
+		<string>Blacklist</string>
 		<key>Type</key>
 		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Images</string>
+		<key>Type</key>
+		<string>Group</string>
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
@@ -33,6 +45,12 @@
 		<string>CheckBox</string>
 	</dict>
 	<dict>
+		<key>Title</key>
+		<string>Thumbnails</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
 		<key>DefaultValue</key>
 		<true/>
 		<key>Key</key>
@@ -48,7 +66,7 @@
 		<key>Key</key>
 		<string>hideSelfThumb</string>
 		<key>Title</key>
-		<string>Hide self thumbnail</string>
+		<string>Hide self thumbnails</string>
 		<key>Type</key>
 		<string>CheckBox</string>
 	</dict>
