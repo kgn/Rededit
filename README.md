@@ -28,3 +28,9 @@ This modifies the Reddit website by finding links to images in comments and disp
 *WARNING: there are no tags for NSFW image links in comments :)*
 
 ![ImagesInComments](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ImagesInComments.png)
+
+**Hide No-Image and Self Thumbnails**
+
+This modifies the Reddit website to hide all no-image and self thumbnails. These can get visually repetitive and take up unnecessary space.
+
+![HideNoImgSelfThumb](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/HideNoImgSelfThumb.png)
