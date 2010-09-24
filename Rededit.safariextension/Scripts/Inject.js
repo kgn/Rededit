@@ -6,6 +6,8 @@ safari.self.tab.dispatchMessage('urlChanged', false);
 //ask the global page what to inject based on the settings
 var commentImagesRun = false;
 var imageExpandoRun = false;
+var hideNoImageThumbRun = false;
+var hideSelfThumbRun = false;
 function handleMessage(event){
     if(event.name == 'commentImages' && !commentImagesRun){
         commentImages();
@@ -13,7 +15,14 @@ function handleMessage(event){
     }else if(event.name == 'imageExpando' && !imageExpandoRun){
         imageExpando();
         imageExpandoRun = true;
+    }else if(event.name == 'hideNoImageThumb' && !hideNoImageThumbRun){
+        hideNoImageThumb();
+        hideNoImageThumbRun = true;
+    }else if(event.name == 'hideSelfThumb' && !hideSelfThumbRun){
+        hideSelfThumb();
+        hideSelfThumbRun = true;
     }
+    
 }
 safari.self.addEventListener('message', handleMessage, false);
 safari.self.tab.dispatchMessage('injectWithSettings');
@@ -137,4 +146,21 @@ function imageUrlFromLink(linkElement){
     }
     
     return imgUrl;
+}
+
+function hideParentOfImageWithUrl(url){
+    var imgs = document.getElementsByTagName('img');
+    for(i=0; i<imgs.length; ++i){
+        if(imgs[i].src.indexOf(url) >= 0){
+            imgs[i].parentNode.style.display = 'none';
+        }
+    }
+}
+
+function hideNoImageThumb(){
+    hideParentOfImageWithUrl('/static/noimage.png');
+}
+
+function hideSelfThumb(){
+    hideParentOfImageWithUrl('/static/self_default2.png');
 }

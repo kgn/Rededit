@@ -32,5 +32,25 @@
 		<key>Type</key>
 		<string>CheckBox</string>
 	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<true/>
+		<key>Key</key>
+		<string>hideNoImageThumb</string>
+		<key>Title</key>
+		<string>Hide no-image thumbnails</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<true/>
+		<key>Key</key>
+		<string>hideSelfThumb</string>
+		<key>Title</key>
+		<string>Hide self thumbnail</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
 </array>
 </plist>

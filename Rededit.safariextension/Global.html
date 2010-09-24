@@ -14,6 +14,14 @@
                         if(safari.extension.settings.imageExpando){               
                             activeTab.page.dispatchMessage('imageExpando');
                         }
+                        
+                        if(safari.extension.settings.hideNoImageThumb){               
+                            activeTab.page.dispatchMessage('hideNoImageThumb');
+                        }
+                        
+                        if(safari.extension.settings.hideSelfThumb){               
+                            activeTab.page.dispatchMessage('hideSelfThumb');
+                        }
                     }
                 }
             }
