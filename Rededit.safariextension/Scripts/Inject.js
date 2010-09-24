@@ -45,9 +45,9 @@ function getElementsByClassName(node, classname){
 }
 
 function commentImages(){
-    var commentarea = getElementsByClassName(document, 'commentarea');
-    if(commentarea && commentarea.length > 0){
-        var links = commentarea[0].getElementsByTagName('a');
+    var comments = getElementsByClassName(document, 'comment');
+    for(c=0; c<comments.length; ++c){
+        var links = comments[c].getElementsByTagName('a');
         for(i=0; i<links.length; ++i){
             var imgUrl = imageUrlFromLink(links[i]);
             if(imgUrl){
