@@ -3,6 +3,7 @@
 	<head>
 		<title>Rededit Global</title>
 		<script type="text/javascript">
+		    //injection script
             function messageHandler(event){
                 if(event.name === 'injectWithSettings'){
                     activeTab = event.target.browserWindow.activeTab;
@@ -27,9 +28,35 @@
             }
             
             safari.application.addEventListener('message', messageHandler, false);
-          
-            //TODO: add a timer to updat the extension bars,
-            //because the bars currently only load when a webpage is loaded
+            
+            //extension bar
+            
+            //TODO: if it's been more then 10 minutes update 
+            //all bars regardless of active window and cache
+            
+            var cacheUrl = null;
+            function updateAllBars(){
+                var extBars = safari.extension.bars;
+                for(var i = 0; i < extBars.length; ++i){
+                    var barWindow = extBars[i].contentWindow;
+                    var activeWindow = safari.application.activeBrowserWindow;
+                    if(extBars[i].browserWindow == activeWindow){
+                        barWindow.update();
+                    }
+                }
+            }
+            
+            function timedCount(){
+                setTimeout('timedCount()', 1000);
+                
+                var activeUrl = safari.application.activeBrowserWindow.activeTab.url;
+                if(cacheUrl != activeUrl){
+                    updateAllBars();
+                    cacheUrl = activeUrl;
+                }
+            }
+            
+            timedCount();
         </script>
 	</head>
 </html>

@@ -11,15 +11,9 @@ function initialize(){
     Bar.update();
 }
 
-function respondToMessage(messageEvent){
-	if(messageEvent.name === 'urlChanged'){
-		Bar.update();
-	}
+function update(){
+    Bar.update();
 }
-
-safari.self.browserWindow.addEventListener('message', respondToMessage, false);
-
-
 
 String.prototype.unescapeHtml = function(){
     var unescapeDiv = document.getElementById('unescape');

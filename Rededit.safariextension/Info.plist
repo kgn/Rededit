@@ -21,6 +21,8 @@
 			<dict>
 				<key>Filename</key>
 				<string>Bar.html</string>
+				<key>Identifier</key>
+				<string></string>
 				<key>Label</key>
 				<string>Reddit Bar</string>
 			</dict>
