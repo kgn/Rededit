@@ -68,27 +68,30 @@ function _Bar(){
         this.blacklist = document.getElementById('blacklist');
     }
     
-    this.update = function(){
+    this.update = function(){        
+        var tab = safari.self.browserWindow.activeTab;
+        this._updateWithUrl(tab.url);
+    }
+    
+    this._updateWithUrl = function(url){
         this.submit.style.display = 'none';
         this.submitted.style.display = 'none';
         this.blacklist.style.display = 'none';
         
-        var tab = safari.self.browserWindow.activeTab;
-        
         //url is undefined
-        if(typeof(tab.url) === 'undefined'){
+        if(typeof(url) === 'undefined'){
             return;
         }
         
         //url is in blacklist
-        if(isBlacklisted(tab.url)){
+        if(isBlacklisted(url)){
             this.blacklist.style.display = 'inline-block';
             return;
         }
         
         var thisBar = this;
         xmlhttp = new XMLHttpRequest();
-        xmlhttp.open('GET', urlQueryUrl+tab.url, true);
+        xmlhttp.open('GET', urlQueryUrl+url, true);
         xmlhttp.onreadystatechange = function(){
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
                 thisBar._update(JSON.parse(xmlhttp.responseText));
@@ -102,6 +105,15 @@ function _Bar(){
         
         //submit story
         if(typeof(json) === 'undefined' || typeof(json.data.children[0]) === 'undefined'){
+            //if the url is from imgur try striping off 'i.'
+            if(tab.url.indexOf('imgur.com') >= 0){
+                imgurUrl = tab.url.match(/http:\/\/i\.(imgur.com.*)/i);
+                if(imgurUrl){
+                    this._updateWithUrl('http://'+imgurUrl[1]);
+                    return;
+                }
+            }
+            
             this.submit.href = submitUrl+tab.url+'&title='+tab.title;
             this.submit.style.display = 'inline-block';
             return;
