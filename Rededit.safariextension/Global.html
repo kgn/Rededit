@@ -34,7 +34,9 @@
             //TODO: if it's been more then 10 minutes update 
             //all bars regardless of active window and cache
             
+            //TODO: implement better cache
             var cacheUrl = null;
+            
             function updateAllBars(){
                 var extBars = safari.extension.bars;
                 for(var i = 0; i < extBars.length; ++i){
