@@ -26,19 +26,19 @@
 /*video expando*/
 
 div.expando-button.video.collapsed {
-	background: url(../Images/ImageExpando.png) -4px -4px;
+	background: url(../Images/VideoExpando.png) -4px -4px !important;
 }
 
 div.expando-button.video.collapsed:hover, .eb-vch {
-	background: url(../Images/ImageExpando.png) -4px -35px;
+	background: url(../Images/VideoExpando.png) -4px -35px !important;
 }
 
 div.expando-button.video.expanded, .eb-se {
     margin-bottom:5px;
-	background: url(../Images/ImageExpando.png) -4px -66px;
+	background: url(../Images/VideoExpando.png) -4px -66px !important;
 }
 
 div.expando-button.video.expanded:hover, .eb-seh {
-	background: url(../Images/ImageExpando.png) -4px -97px;
+	background: url(../Images/VideoExpando.png) -4px -97px !important;
 }
 
