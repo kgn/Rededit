@@ -25,20 +25,20 @@
 
 /*video expando*/
 
-.rededit-video-expando.collapsed {
-	background: url(../Images/VideoExpando.png) -4px -4px;
+div.expando-button.video.collapsed {
+	background: url(../Images/ImageExpando.png) -4px -4px;
 }
 
-.rededit-video-expando.collapsed:hover, .eb-sch {
+div.expando-button.video.collapsed:hover, .eb-vch {
 	background: url(../Images/ImageExpando.png) -4px -35px;
 }
 
-.rededit-video-expando.expanded, .eb-se {
+div.expando-button.video.expanded, .eb-se {
     margin-bottom:5px;
 	background: url(../Images/ImageExpando.png) -4px -66px;
 }
 
-.rededit-video-expando.expanded:hover, .eb-seh {
+div.expando-button.video.expanded:hover, .eb-seh {
 	background: url(../Images/ImageExpando.png) -4px -97px;
 }
 
