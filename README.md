@@ -34,3 +34,11 @@ This modifies the Reddit website by finding links to images in comments and disp
 This modifies the Reddit website to hide all no-image and self thumbnails. These can get visually repetitive and take up unnecessary space.
 
 ![HideNoImgSelfThumb](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/HideNoImgSelfThumb.png)
+
+**Video Expando Replacement Icon**
+
+Rededit includes a cleaner, more pixel prefect, video expando icon.
+
+![VideoExpando](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/VideoExpando.png)
+
+
