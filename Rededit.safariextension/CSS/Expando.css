@@ -22,3 +22,23 @@
 .rededit-image-expando.expanded:hover, .eb-seh {
 	background: url(../Images/ImageExpando.png) -4px -97px;
 }
+
+/*video expando*/
+
+.rededit-video-expando.collapsed {
+	background: url(../Images/VideoExpando.png) -4px -4px;
+}
+
+.rededit-video-expando.collapsed:hover, .eb-sch {
+	background: url(../Images/ImageExpando.png) -4px -35px;
+}
+
+.rededit-video-expando.expanded, .eb-se {
+    margin-bottom:5px;
+	background: url(../Images/ImageExpando.png) -4px -66px;
+}
+
+.rededit-video-expando.expanded:hover, .eb-seh {
+	background: url(../Images/ImageExpando.png) -4px -97px;
+}
+
