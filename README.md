@@ -1,6 +1,10 @@
-![Icon 64](http://github.com/InScopeApps/Rededit/raw/master/Rededit.safariextension/Icon-64.png)
-
-Rededit is a Safari Extension that adds features to the Reddit.com website, and an extension bar which provides Reddit information about the active webpage.
+<div>
+	<img src="http://github.com/InScopeApps/Rededit/raw/master/Rededit.safariextension/Icon-64.png" alt="Icon" />
+	<div style="margin-top: -64px; margin-left: 64px; padding-left: 5px;">
+		<h1 style="margin: 8px 0 3px 0;">Rededit</h1>
+		<p style="margin: 0;">Rededit is a Safari Extension that adds features to the Reddit.com website, and an extension bar which provides Reddit information about the active webpage.</p>
+	</div>
+</div>
 
 *Rededit is still in **alpha**, features may be missing or broken.*
 
