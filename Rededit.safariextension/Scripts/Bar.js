@@ -68,9 +68,9 @@ function _Bar(){
     }
     
     this._updateWithUrl = function(url){
-        this.submit.style.display = 'none';
-        this.submitted.style.display = 'none';
-        this.blacklist.style.display = 'none';
+        this.submit.className = 'hide';
+        this.submitted.className = 'hide';
+        this.blacklist.className = 'hide';
         
         //url is undefined
         if(typeof(url) === 'undefined'){
@@ -79,7 +79,7 @@ function _Bar(){
         
         //url is in blacklist
         if(isBlacklisted(url)){
-            this.blacklist.style.display = 'inline-block';
+            this.blacklist.className = 'display';
             return;
         }
         
@@ -109,7 +109,7 @@ function _Bar(){
             }
             
             this.submit.href = submitUrl+tab.url+'&title='+tab.title;
-            this.submit.style.display = 'inline-block';
+            this.submit.className = 'display';
             return;
         }
         
@@ -174,7 +174,7 @@ function _Bar(){
 		this.author.innerHTML = data.author;
 		this.author.href = userRedditUrl+data.author;
 		this.created.innerHTML = creationDate.toLocaleDateString();
-		this.nsfw.style.display = data.over_18 ? 'inline-block' : 'none';
+		this.nsfw.style.display = data.over_18 ? 'inline' : 'none';
     			
     	//comments
 		var commentStr = ' comment';
@@ -189,6 +189,6 @@ function _Bar(){
 		this.comments.title = data.num_comments+commentStr;
 		this.comments.className = 'comments'+data.num_comments.toString().length;
     			
-		this.submitted.style.display = 'inline-block';
+		this.submitted.className = 'display';
     }
 };

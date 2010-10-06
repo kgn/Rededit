@@ -26,6 +26,8 @@ a{
 	left: 40px;
 }
 
+/* @group Arrows */
+
 #up, #down{
 	width: 22px;
 	height: 22px;
@@ -64,6 +66,8 @@ a{
 	background: url(../Images/ArrowsActive.png) no-repeat bottom right;
 }
 
+/* @end */
+
 #score{
 	font-size: 17px;
 	font-weight: bold;
@@ -75,8 +79,10 @@ a{
 	position: absolute;
 	top: 10px;
 	left: 40px;
-	display: none;
+	-webkit-transition: opacity 0.25s ease-in-out;
 }
+
+/* @group Story */
 
 #story, #storyinfo{
 	text-align: center;
@@ -105,6 +111,10 @@ a{
 	top: 16px;
 	font-size: 8px;
 }
+
+/* @end */
+
+/* @group Comments */
 
 #comments{
 	position: absolute;
@@ -142,13 +152,27 @@ a{
 	width: 40px;
 }
 
+/* @end */
+
 #blacklist{
 	position: absolute;
 	top: 3px;
 	right: 3px;
-	display: none;
+	-webkit-transition: opacity 0.25s ease-in-out;
 }
 
 #submitted{
-    display: none;
+    -webkit-transition: opacity 0.25s ease-in-out;
 }
+
+/* @group Display */
+
+.display{
+	opacity: 1;
+}
+
+.hide{
+	opacity: 0;
+}
+
+/* @end */
