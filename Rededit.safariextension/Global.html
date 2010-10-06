@@ -6,23 +6,20 @@
 		    //injection script
             function messageHandler(event){
                 if(event.name === 'injectWithSettings'){
-                    activeTab = event.target.browserWindow.activeTab;
-                    if(activeTab.url.indexOf('reddit.com') >= 0){
-                        if(safari.extension.settings.commentImages){               
-                            activeTab.page.dispatchMessage('commentImages');
-                        }
-                        
-                        if(safari.extension.settings.imageExpando){               
-                            activeTab.page.dispatchMessage('imageExpando');
-                        }
-                        
-                        if(safari.extension.settings.hideNoImageThumb){               
-                            activeTab.page.dispatchMessage('hideNoImageThumb');
-                        }
-                        
-                        if(safari.extension.settings.hideSelfThumb){               
-                            activeTab.page.dispatchMessage('hideSelfThumb');
-                        }
+                    if(safari.extension.settings.commentImages){            
+                        event.target.page.dispatchMessage('commentImages');
+                    }
+                    
+                    if(safari.extension.settings.imageExpando){               
+                        event.target.page.dispatchMessage('imageExpando');
+                    }
+                    
+                    if(safari.extension.settings.hideNoImageThumb){               
+                        event.target.page.dispatchMessage('hideNoImageThumb');
+                    }
+                    
+                    if(safari.extension.settings.hideSelfThumb){               
+                        event.target.page.dispatchMessage('hideSelfThumb');
                     }
                 }
             }

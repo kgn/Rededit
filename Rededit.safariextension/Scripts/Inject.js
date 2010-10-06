@@ -19,10 +19,17 @@ function handleMessage(event){
         hideSelfThumb();
         hideSelfThumbRun = true;
     }
-    
 }
-safari.self.addEventListener('message', handleMessage, false);
-safari.self.tab.dispatchMessage('injectWithSettings');
+
+//if we arnt on reddit don't setup the events.
+//nothin happens unless an event tells it to
+//NOTE: anything that doesn't require a setting
+//should be run in this if statement so it only 
+//runs on reddit.com
+if(document.location.href.indexOf('reddit.com') >= 0){
+    safari.self.addEventListener('message', handleMessage, false);
+    safari.self.tab.dispatchMessage('injectWithSettings');
+}
 
 //FROM: http://www.netlobo.com/javascript-insertafter.html
 function insertAfter(referenceNode, newNode){
