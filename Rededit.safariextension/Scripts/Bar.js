@@ -52,6 +52,8 @@ function _Bar(){
         this.score = document.getElementById('score');
         this.down = document.getElementById('down');
         this.submit = document.getElementById('submit');
+        this.submitcount = document.getElementById('submitcount');
+        this.resubmit = document.getElementById('resubmit');
         this.story = document.getElementById('story');
         this.storyinfo = document.getElementById('storyinfo');
         this.subreddit = document.getElementById('subreddit');
@@ -116,19 +118,19 @@ function _Bar(){
         //TODO: add support for displaying all the instances of this story on reddit
         //probbaly with previous and next buttons
         
-        var data = json.data.children[0].data;
+        var currentIndex = 0;
         
         //display the story with the highest score
-        if(json.data.children.length > 1){
-            var highScore = data.score;
-            for(i=1; i<json.data.children.length; ++i){
-                var childData = json.data.children[i].data;
-                if(childData.score > highScore){
-                    highScore = childData.score;
-                    data = childData;
-                }
+        var highScore = json.data.children[0].data.score;
+        for(i=0; i<json.data.children.length; ++i){
+            var childData = json.data.children[i].data;
+            if(childData.score > highScore){
+                highScore = childData.score;
+                currentIndex = i;
             }
         }
+        
+        var data = json.data.children[currentIndex].data;
         
         //score
 		this.score.innerHTML = data.score;
@@ -161,6 +163,17 @@ function _Bar(){
 			this.down.title = 'vote down';
 			//this.down.href = '#';
 		}
+		
+		//resubmit
+	    var submittedCountStr = 'Submitted '+json.data.children.length;
+	    if(json.data.children.length == 1){
+	        submittedCountStr += ' time';
+	    }else{
+	        submittedCountStr += ' times';
+	    }
+		this.submitcount.innerHTML = (currentIndex+1)+' of '+json.data.children.length;
+		this.submitcount.setAttribute('title', submittedCountStr)
+		this.resubmit.href = submitUrl+tab.url+'&resubmit=true&title='+tab.title;
 		
 		//story
 		this.story.innerHTML = data.title;

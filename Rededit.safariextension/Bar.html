@@ -10,16 +10,21 @@
 	
 		<a id="icon" title="reddit.com"></a>
 		
-		<a id="submit" class="hide">Submit</a>
+		<a id="submit" class="hide" title="Submit this story to reddit!">Submit</a>
 		
-		<div id="submitted" class="hide">
+		<div id="submitted" class="display">
     		<div id="stats">
     			<a id="up" href="javascript:voteUp()"></a>
     			<span id="score"></span>
     			<a id="down" href="javascript:voteDown()"></a>
+    			
+                <a id="submitcount"></a>
+                <a id="resubmit" title="Resubmit this story to reddit">Resubmit</a>
     		</div>
     		
-    		<a id="story"></a>
+    		<div id="storyblock">
+    		    <a id="story"></a>
+    	    </div>
     		<div id="storyinfo">
     			Submitted to <a id="subreddit"></a> by <a id="author"/></a> on <span id="created"/></span> <span id="nsfw">NSFW</span>
     		</div>

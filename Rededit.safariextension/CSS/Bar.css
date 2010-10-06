@@ -20,13 +20,13 @@ a{
 	background: url(../Images/RedditBar.png) no-repeat left;
 }
 
+/* @group Arrows */
+
 #stats{
 	position: absolute;
 	top: 4px;
 	left: 40px;
 }
-
-/* @group Arrows */
 
 #up, #down{
 	width: 22px;
@@ -84,14 +84,24 @@ a{
 
 /* @group Story */
 
-#story, #storyinfo{
+#submitcount{
+	position: absolute;
+	top: -2px;
+}
+
+#resubmit{
+	position: absolute;
+	top: 10px;
+}
+
+#storyblock, #storyinfo{
 	text-align: center;
 	position: absolute;
 	left: 200px;
 	right: 200px;
 }
 
-#story{
+#storyblock{
 	top: 2px;
 	overflow: hidden;
 	text-overflow: ellipsis;
