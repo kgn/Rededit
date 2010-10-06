@@ -45,4 +45,8 @@ Rededit includes a cleaner, more pixel prefect, video expando icon.
 
 ![VideoExpando](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/VideoExpando.png)
 
+**Settings**
+
+![Settings](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/Settings.png)
+
 
