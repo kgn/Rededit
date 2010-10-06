@@ -43,6 +43,8 @@ function isBlacklisted(url){
 }
 
 function _Bar(){
+    this.jsonCache = null;
+    
     this.initialize = function(){
         this.icon = document.getElementById('icon');
         this.submitted = document.getElementById('submitted');
@@ -112,25 +114,36 @@ function _Bar(){
             
             this.submit.href = submitUrl+tab.url+'&title='+tab.title;
             this.submit.className = 'display';
+            this.jsonCache = null;
             return;
         }
         
         //TODO: add support for displaying all the instances of this story on reddit
         //probbaly with previous and next buttons
         
-        var currentIndex = 0;
+        var storyIndex = 0;
+        this.jsonCache = json;
         
         //display the story with the highest score
-        var highScore = json.data.children[0].data.score;
-        for(i=0; i<json.data.children.length; ++i){
-            var childData = json.data.children[i].data;
+        var highScore = this.jsonCache.data.children[0].data.score;
+        for(i=0; i<this.jsonCache.data.children.length; ++i){
+            var childData = this.jsonCache.data.children[i].data;
             if(childData.score > highScore){
                 highScore = childData.score;
-                currentIndex = i;
+                storyIndex = i;
             }
         }
         
-        var data = json.data.children[currentIndex].data;
+        this.displayStory(storyIndex);
+    }
+        
+    this.displayStory = function(storyIndex){
+        if(storyIndex+1 > this.jsonCache.data.children.length){
+            storyIndex = 0;
+        }
+        
+        var tab = safari.self.browserWindow.activeTab;
+        var data = this.jsonCache.data.children[storyIndex].data;
         
         //score
 		this.score.innerHTML = data.score;
@@ -165,13 +178,15 @@ function _Bar(){
 		}
 		
 		//resubmit
-	    var submittedCountStr = 'Submitted '+json.data.children.length;
-	    if(json.data.children.length == 1){
+	    var submittedCountStr = 'Submitted '+this.jsonCache.data.children.length;
+	    if(this.jsonCache.data.children.length == 1){
 	        submittedCountStr += ' time';
 	    }else{
 	        submittedCountStr += ' times';
 	    }
-		this.submitcount.innerHTML = (currentIndex+1)+' of '+json.data.children.length;
+	    
+	    this.submitcount.setAttribute('href', "javascript:Bar.displayStory("+(storyIndex+1)+")");
+		this.submitcount.innerHTML = (storyIndex+1)+' of '+this.jsonCache.data.children.length;
 		this.submitcount.setAttribute('title', submittedCountStr)
 		this.resubmit.href = submitUrl+tab.url+'&resubmit=true&title='+tab.title;
 		
