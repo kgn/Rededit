@@ -138,6 +138,9 @@ function _Bar(){
     }
         
     this.displayStory = function(storyIndex){
+        //TODO: figure out why this isn't fading out then in
+        this.submitted.className = 'hide';
+    
         if(storyIndex+1 > this.jsonCache.data.children.length){
             storyIndex = 0;
         }
@@ -185,7 +188,9 @@ function _Bar(){
 	        submittedCountStr += ' times';
 	    }
 	    
-	    this.submitcount.setAttribute('href', "javascript:Bar.displayStory("+(storyIndex+1)+")");
+	    if(this.jsonCache.data.children.length > 1){
+	        this.submitcount.setAttribute('href', "javascript:Bar.displayStory("+(storyIndex+1)+")");
+	    }
 		this.submitcount.innerHTML = (storyIndex+1)+' of '+this.jsonCache.data.children.length;
 		this.submitcount.setAttribute('title', submittedCountStr)
 		this.resubmit.href = submitUrl+tab.url+'&resubmit=true&title='+tab.title;
