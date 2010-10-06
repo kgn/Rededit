@@ -11,7 +11,9 @@ Features
 
 **Extension Bar**
 
-This tool bar displays information from Reddit about the current website. There are currently issues with this feature :( Voting doesn't work and the bar only updates when a page has been loaded, not when tabs are switched. If you know how to submit votes to reddit over ajax please share the knowledge :)
+The tool bar displays information from Reddit about the current website. Stories can be submitted to Reddit multiple times, by default the bar shows you the story with the most upboats. You can cycle through the stories by clicking on "# of #".
+
+There are currently issues with this feature :( Voting doesn't work, if you know how to submit votes to Reddit over ajax please share the knowledge :)
 
 ![ExtensionBar](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ExtensionBar.png)
 
