@@ -178,10 +178,12 @@ a{
 /* @group Display */
 
 .display{
+    display: inline;
 	opacity: 1;
 }
 
 .hide{
+    display: none;
 	opacity: 0;
 }
 
