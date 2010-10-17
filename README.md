@@ -6,6 +6,8 @@ Rededit is a Safari Extension that adds features to the Reddit.com website, and 
 
 Rededit is distributed under the MIT license, see the LICENSE file for more information.
 
+[Download](http://github.com/downloads/InScopeApps/Rededit/Rededit.safariextz "Download Rededit")
+
 Features
 --------
 
