@@ -2,20 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Extension Updates</key>
-    <array>
-        <dict>
-            <key>CFBundleIdentifier</key>
-            <string>com.InScopeApps.rededit</string>
-            <key>Developer Identifier</key>
-            <string>T3DCX7XWL8</string>
-            <key>CFBundleVersion</key>
-            <string>0.7</string>
-            <key>CFBundleShortVersionString</key>
-            <string>0.7</string>
-            <key>URL</key>
-            <string>http://github.com/downloads/InScopeApps/Rededit/Rededit-0.7.safariextz</string>
-        </dict>
-    </array>
+	<key>Extension Updates</key>
+	<array>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.InScopeApps.rededit</string>
+			<key>Developer Identifier</key>
+			<string>T3DCX7XWL8</string>
+			<key>CFBundleVersion</key>
+			<string>0.8</string>
+			<key>CFBundleShortVersionString</key>
+			<string>0.8</string>
+			<key>URL</key>
+			<string>http://github.com/downloads/InScopeApps/Rededit/Rededit.safariextz</string>
+		</dict>
+	</array>
 </dict>
 </plist>
