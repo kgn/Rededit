@@ -1,4 +1,4 @@
-![Icon 100](http://github.com/InScopeApps/Rededit/raw/master/Icon-100.png)
+![Icon 100](https://github.com/InScopeApps/Rededit/raw/master/Icon-100.png)
 
 Rededit is a Safari Extension that adds features to the Reddit.com website, and an extension bar which provides Reddit information about the active webpage.
 
@@ -17,15 +17,15 @@ The tool bar displays information from Reddit about the current website. Stories
 
 There are currently issues with this feature :( Voting doesn't work, if you know how to submit votes to Reddit over ajax please share the knowledge :)
 
-![ExtensionBar](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ExtensionBar.png)
+![ExtensionBar](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ExtensionBar.png)
 
-![ExtensionBarNSFW](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ExtensionBarNSFW.png)
+![ExtensionBarNSFW](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ExtensionBarNSFW.png)
 
 **Image Expando**
 
 This modifies the Reddit website by adding expando buttons for images. Reddit already has expando buttons for self posts and videos. The Image Expando button allows you to quickly see the linked image without leaving the Reddit website.
 
-![ImageExpando](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ImageExpando.png)
+![ImageExpando](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ImageExpando.png)
 
 **Images in Comments**
 
@@ -33,22 +33,22 @@ This modifies the Reddit website by finding links to images in comments and disp
 
 *WARNING: there are no tags for NSFW image links in comments :)*
 
-![ImagesInComments](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ImagesInComments.png)
+![ImagesInComments](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/ImagesInComments.png)
 
 **Hide No-Image and Self Thumbnails**
 
 This modifies the Reddit website to hide all no-image and self thumbnails. These can get visually repetitive and take up unnecessary space.
 
-![HideNoImgSelfThumb](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/HideNoImgSelfThumb.png)
+![HideNoImgSelfThumb](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/HideNoImgSelfThumb.png)
 
 **Video Expando Replacement Icon**
 
 Rededit includes a cleaner, more pixel prefect, video expando icon.
 
-![VideoExpando](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/VideoExpando.png)
+![VideoExpando](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/VideoExpando.png)
 
 **Settings**
 
-![Settings](http://github.com/InScopeApps/Rededit/raw/master/ScreenShots/Settings.png)
+![Settings](https://github.com/InScopeApps/Rededit/raw/master/ScreenShots/Settings.png)
 
 
